@@ -290,7 +290,7 @@ input::placeholder{color:#B49E97}
      pixels short, which scrolls the button out of view. min-height beats the
      inline height it sets; the slack is invisible once the form's own panel
      is transparent. */
-  width:100%;min-height:380px;border:0;display:block;
+  width:100%;min-height:320px;border:0;display:block;
   background:transparent;color-scheme:normal;
 }
 
