@@ -1,0 +1,460 @@
+:root{
+  --ink:#374936;        /* the green from the logo */
+  --ink-deep:#2B3629;
+  --ink-soft:#5A6357;
+  --body:#3E473C;
+  --cream:#F6F2EB;      /* page ground */
+  --sand:#EFE9DF;       /* alternating band */
+  --sand-deep:#E4DCCB;
+  --blush:#E8C9C0;
+  --blush-pale:#F4E3DE;
+  --brass:#B08A57;      /* the rule under the logo */
+  --line:#DDD5C7;
+  --maxw:1240px;
+  --gut:clamp(20px,5vw,96px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--body);
+  font-family:'Jost','Helvetica Neue',Arial,sans-serif;
+  font-weight:300;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* ---------- type ---------- */
+.display{
+  font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  font-weight:400;
+  color:var(--ink);
+  line-height:1.03;
+  text-wrap:balance;
+  margin:0;
+  letter-spacing:-.005em;
+}
+.display em{font-style:italic}
+h1.display{font-size:clamp(46px,8.4vw,104px)}
+h2.display{font-size:clamp(34px,5.4vw,60px)}
+h3.display{font-size:clamp(28px,3.4vw,44px)}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.3em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  font-weight:400;
+  margin:0;
+}
+.lede{font-size:clamp(18px,2vw,20px);line-height:1.65;max-width:34em;margin:0}
+p{margin:0}
+.rule{width:72px;height:1px;background:var(--brass);border:0;margin:0}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut)}
+section{padding-block:clamp(64px,9vw,120px)}
+.band-sand{background:var(--sand)}
+.band-blush{background:var(--blush)}
+
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;
+  top:env(safe-area-inset-top,0px);
+  z-index:50;
+  background:rgba(246,242,235,.93);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{
+  max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);
+  min-height:76px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--ink);flex-shrink:0}
+.brand img{height:38px;width:auto;mix-blend-mode:multiply}
+.brand span{
+  font-family:'Cinzel',Georgia,serif;font-size:15px;letter-spacing:.22em;
+  white-space:nowrap;line-height:1;
+}
+.nav{display:flex;align-items:center;gap:clamp(18px,2.6vw,38px)}
+.nav a{
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink);
+  display:inline-flex;align-items:center;min-height:44px;
+  border-bottom:1px solid transparent;
+}
+.nav a:hover{border-bottom-color:var(--brass)}
+.nav a:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--brass);outline-offset:3px;border-radius:1px;
+}
+.nav .btn-sm{
+  background:var(--ink);color:var(--cream);padding:0 22px;border-bottom:0;
+  min-height:44px;
+}
+
+/* A nav item for something that isn't live yet. Deliberately NOT an <a>: a
+   placeholder href would 404 the moment a visitor clicked it. When the shop
+   opens, swap the <span class="nav-soon"> for <a href="…"> and delete the
+   chip — no other change needed. */
+.nav-soon{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-soft);cursor:default;user-select:none;
+  min-height:44px;white-space:nowrap;
+}
+.chip{
+  font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--brass);color:var(--brass);
+  padding:3px 7px;line-height:1;
+}
+.foot-nav .nav-soon{color:#9FB094;min-height:0}
+.foot-nav .chip{border-color:#7E9070;color:#9FB094}
+.nav .btn-sm:hover{background:var(--ink-deep);border-bottom-color:transparent}
+@media (max-width:820px){
+  /* the header row is full at phone width; these move to the footer nav */
+  .nav a.hide-sm,.nav .hide-sm{display:none}
+  .brand span{display:none}
+  .brand img{height:42px}
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:52px;padding:0 32px;
+  background:var(--ink);color:var(--cream);text-decoration:none;
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;
+  border:1px solid var(--ink);cursor:pointer;
+  transition:background .2s ease,color .2s ease;
+}
+.btn:hover{background:var(--ink-deep);border-color:var(--ink-deep)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--cream)}
+.link-u{
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);
+  text-decoration:none;border-bottom:1px solid var(--brass);padding-bottom:4px;
+  display:inline-block;
+}
+.link-u:hover{border-bottom-color:var(--ink)}
+
+/* ---------- photo slots ---------- */
+.slot{
+  position:relative;
+  background:
+    linear-gradient(140deg,var(--sand-deep) 0%,var(--sand) 45%,var(--blush-pale) 100%);
+  border:1px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;text-align:center;padding:28px;
+  color:var(--ink-soft);
+  max-width:100%;
+}
+.slot svg{opacity:.3}
+.slot .tag{
+  font-size:10px;letter-spacing:.26em;text-transform:uppercase;
+  border:1px solid var(--brass);color:var(--brass);padding:5px 11px;
+}
+.slot .cap{font-size:13px;letter-spacing:.06em;max-width:24ch;line-height:1.5}
+
+/* A slot holding a real photo. Keeps every sizing rule above — the aspect
+   ratios, the absolute insets in the class-page hero — and just swaps the
+   placeholder treatment for the image, cropped to fill rather than squashed. */
+.slot.filled{
+  display:block;padding:0;border:0;overflow:hidden;
+  background:var(--sand-deep);
+}
+.slot.filled img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ---------- hero ---------- */
+.hero-grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,5vw,72px);
+  align-items:center;
+}
+.hero-copy{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,30px);align-items:flex-start}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px 30px}
+.hero-slot{aspect-ratio:4/5;min-height:320px}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-slot{aspect-ratio:4/3;min-height:240px;order:-1}
+}
+
+/* ---------- class cards ---------- */
+.stack{display:flex;flex-direction:column;gap:clamp(36px,5vw,56px)}
+.head-block{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,44px)}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+.card{display:flex;flex-direction:column;gap:18px;text-decoration:none;color:var(--body)}
+.card .slot{aspect-ratio:3/2}   /* 6:4 */
+.card .status{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:9px;
+}
+.card .status.open{color:var(--ink)}
+.card .status.soon{color:var(--ink-soft)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--brass);flex:none}
+.dot.muted{background:#B9B3A4}
+.card h3{margin:0}
+.meta{
+  font-size:15px;letter-spacing:.02em;color:var(--body);
+  display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;
+  font-variant-numeric:tabular-nums;
+}
+.meta b{font-weight:500;color:var(--ink)}
+.meta i{font-style:normal;color:#9A9384}
+
+/* ---------- about ---------- */
+.about-grid{
+  display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);
+  gap:clamp(36px,5.5vw,80px);align-items:center;
+}
+/* The portrait used to carry an offset brass frame drawn with ::after at
+   z-index:-1. That was a bug: .portrait never established a stacking context,
+   so instead of sitting behind the photo the frame's top and left edges drew
+   across it. Dropped in favour of a plain photo with a little lift — no
+   stacking games, renders the same everywhere. */
+.portrait{position:relative;max-width:420px;width:100%}
+.portrait img{
+  width:100%;height:auto;display:block;
+  filter:saturate(.94);
+  box-shadow:0 14px 34px rgba(43,54,41,.14);
+}
+.about-copy{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+.about-copy .quote{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:clamp(23px,2.7vw,31px);line-height:1.42;color:var(--ink);font-weight:300;
+  max-width:26em;
+}
+.sig{
+  font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
+  font-size:22px;color:var(--ink);
+}
+.sig small{
+  display:block;font-family:'Jost',sans-serif;font-style:normal;
+  font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);
+  margin-top:6px;
+}
+@media (max-width:820px){
+  .about-grid{grid-template-columns:1fr}
+  .portrait{max-width:340px}
+}
+
+/* ---------- host ---------- */
+.host{
+  display:grid;grid-template-columns:1fr auto;gap:clamp(28px,4vw,64px);
+  align-items:center;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding-block:clamp(44px,6vw,72px);
+}
+@media (max-width:760px){.host{grid-template-columns:1fr}}
+.host-copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+
+/* ---------- newsletter ---------- */
+.news-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(34px,5vw,88px);align-items:center;
+}
+@media (max-width:820px){.news-grid{grid-template-columns:1fr}}
+.news-copy{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.band-blush .eyebrow{color:#7A5F57}
+.band-blush .lede{color:#4A3F3B}
+form{display:flex;flex-direction:column;gap:18px}
+.field-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:480px){.field-row{grid-template-columns:1fr}}
+label{
+  display:flex;flex-direction:column;gap:9px;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#4A3F3B;
+}
+input{
+  height:54px;border:1px solid #CFAFA5;background:#FBF4F1;
+  padding:0 15px;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;
+  color:var(--ink-deep);border-radius:0;
+}
+input::placeholder{color:#B49E97}
+.form-note{font-size:13px;line-height:1.6;color:#6B5A55;margin:0}
+.form-note a{color:#4A3F3B}
+
+/* ---------- logo band + footer ---------- */
+.logo-band{
+  display:flex;justify-content:center;
+  padding-block:clamp(56px,7vw,86px);
+  border-top:1px solid var(--line);
+}
+.logo-band img{width:min(360px,72vw);height:auto;mix-blend-mode:multiply}
+.site-foot{
+  background:var(--ink);color:var(--cream);
+  padding-block:clamp(56px,7vw,80px);
+}
+.foot-in{
+  max-width:var(--maxw);margin:0 auto;padding-inline:var(--gut);
+  display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center;
+}
+.foot-mark{font-family:'Cinzel',Georgia,serif;font-size:19px;letter-spacing:.24em;color:var(--cream)}
+.foot-tag{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#C2CBB8}
+.foot-nav{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px 34px;margin-top:6px;
+}
+.foot-nav a{
+  font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cream);text-decoration:none;
+  border-bottom:1px solid transparent;padding-bottom:3px;
+}
+.foot-nav a:hover{border-bottom-color:var(--brass)}
+.foot-fine{font-size:11px;letter-spacing:.1em;color:#96A38D;margin-top:12px}
+.site-foot a:focus-visible{outline-color:var(--brass)}
+
+/* clearly-marked things the owner still needs to fill in */
+.fill{
+  background:rgba(176,138,87,.16);
+  box-shadow:0 1px 0 rgba(176,138,87,.55);
+  padding:0 3px;
+}
+
+/* ==========================================================================
+   Needlepoint class page
+   ========================================================================== */
+
+/* --- hero: big photo with a smaller one overlapping its lower-left --- */
+.hero-stack{position:relative;min-height:560px}
+.hero-stack .slot.primary{position:absolute;inset:0 0 0 clamp(0px,5vw,64px)}
+.hero-stack .slot.inset{
+  position:absolute;left:0;bottom:48px;width:min(230px,38%);aspect-ratio:4/5;
+  background:linear-gradient(150deg,var(--blush) 0%,var(--blush-pale) 100%);
+  border-color:#D9B8AF;
+}
+.hero-stack .slot.inset .tag{border-color:#A9776A;color:#8A5F53}
+.hero-stack .slot.inset .cap{color:#7A5F57}
+/* Once it holds a photo, the inset sits directly on top of another photo —
+   without a border the two run together. A cream mat plus a soft shadow reads
+   as a separate card laid over the first, the way the composition intends. */
+.hero-stack .slot.inset.filled{
+  border:clamp(5px,1.1vw,9px) solid var(--cream);
+  box-shadow:0 10px 28px rgba(43,54,41,.22);
+}
+@media (max-width:860px){
+  /* keep the desktop composition rather than setting the two side by side:
+     full-width photo with the small panel overlapping its lower-left corner.
+     Side-by-side shrank the hero photo to ~200px, which is too small to read. */
+  .hero-stack{min-height:0;position:relative}
+  .hero-stack .slot.primary{position:static;inset:auto;aspect-ratio:4/3;width:100%}
+  .hero-stack .slot.inset{left:14px;bottom:14px;width:34%;max-width:140px}
+}
+
+/* --- the $55 / 2 hours / Level 1 bar under the headline --- */
+.statbar{
+  display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(18px,3vw,28px);
+  padding-block:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  max-width:520px;width:100%;
+}
+.stat{display:flex;flex-direction:column;gap:3px}
+.stat b{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+  font-size:clamp(30px,4vw,40px);color:var(--ink);line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.stat span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.stat-div{width:1px;background:var(--brass);align-self:center;height:46px;flex:none}
+@media (max-width:420px){.stat-div{display:none}.statbar{gap:20px 26px}}
+
+/* --- class spec: label / value rows --- */
+.spec{display:flex;flex-direction:column}
+.spec div{
+  display:grid;grid-template-columns:170px minmax(0,1fr);gap:10px 24px;
+  padding-block:24px;border-top:1px solid #D3CABB;align-items:baseline;
+}
+.spec div:last-child{border-bottom:1px solid #D3CABB}
+.spec dt{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin:0}
+.spec dd{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+  font-size:clamp(21px,2.4vw,28px);line-height:1.3;color:var(--ink);margin:0;
+}
+@media (max-width:620px){.spec div{grid-template-columns:1fr;padding-block:20px}}
+
+/* --- dark green band (host section) --- */
+.band-dark{background:var(--ink);color:var(--cream)}
+.band-dark .display{color:var(--cream)}
+.band-dark .display em{color:var(--blush)}
+.band-dark .eyebrow{color:#C2CBB8}
+.band-dark .lede{color:#DAE0D2}
+.host-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(36px,5vw,88px);align-items:start;
+}
+@media (max-width:900px){.host-grid{grid-template-columns:1fr}}
+.host-intro{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+
+/* --- the three host steps. Numbered because the order is real. --- */
+.steps{display:flex;flex-direction:column;max-width:520px;width:100%;margin-top:4px}
+.steps li{
+  display:grid;grid-template-columns:34px minmax(0,1fr);gap:8px 26px;
+  padding-block:22px;border-top:1px solid rgba(246,242,235,.2);
+  list-style:none;align-items:start;
+}
+.steps li:last-child{border-bottom:1px solid rgba(246,242,235,.2)}
+.steps .n{
+  font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;
+  font-size:32px;line-height:1;color:var(--brass);grid-row:span 2;
+}
+.steps b{font-size:14px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--cream)}
+.steps span{font-size:16px;color:#DAE0D2;line-height:1.6}
+.steps ol,.steps{padding:0;margin:0}
+
+/* --- form on a cream card, sitting on the dark band --- */
+.form-card{
+  background:var(--cream);color:var(--ink-deep);
+  padding:clamp(28px,4vw,52px);
+  display:flex;flex-direction:column;gap:20px;
+}
+.form-card h3{margin:0}
+/* the form card sits on the dark band but is cream itself, so it has to opt
+   back out of .band-dark's light-on-dark text colors */
+.form-card .display,
+.form-card .display em{color:var(--ink)}
+.form-card .eyebrow{color:var(--ink-soft)}
+.form-card .sub{font-size:15px;color:var(--ink-soft);margin:0}
+.form-card label{color:var(--body)}
+.form-card input,.form-card select{
+  height:50px;border:1px solid #C7BEAF;background:#FFFDF9;
+  padding:0 14px;font-family:'Jost',sans-serif;font-size:16px;font-weight:300;
+  color:var(--ink-deep);border-radius:0;width:100%;
+}
+.form-card select{appearance:none;padding-right:38px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),
+                   linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px;
+  background-size:6px 6px,6px 6px;background-repeat:no-repeat;
+}
+.check{
+  flex-direction:row;align-items:center;gap:12px;min-height:44px;
+  font-size:15px;letter-spacing:0;text-transform:none;font-weight:300;color:var(--body);
+}
+.check input{width:20px;height:20px;height:20px;accent-color:var(--ink);flex:none}
+
+/* --- "save me a seat" split --- */
+.seat-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(34px,5vw,88px);align-items:center;
+}
+@media (max-width:860px){.seat-grid{grid-template-columns:1fr}}
+.seat-grid .slot{aspect-ratio:4/5;min-height:300px}
+.seat-copy{display:flex;flex-direction:column;gap:22px;align-items:flex-start;width:100%}
+.seat-copy form{width:100%;max-width:520px}
+
+/* --- coming soon, three across --- */
+.soon-head{
+  display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:22px 40px;
+}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(22px,3vw,32px)}
+@media (max-width:860px){.trio{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.trio{grid-template-columns:1fr}}
+.trio .slot{aspect-ratio:4/3}
+.trio article{display:flex;flex-direction:column;gap:16px}
+.trio h3{margin:0;font-size:clamp(24px,2.6vw,34px)}
