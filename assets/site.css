@@ -293,6 +293,10 @@ input::placeholder{color:#B49E97}
   width:100%;min-height:320px;border:0;display:block;
   background:transparent;color-scheme:normal;
 }
+/* the host form carries seven fields, all stacked — it needs far more room
+   than the newsletter. Must come after the rule above: same specificity,
+   so source order is what decides. */
+.ghl-embed--host iframe{min-height:800px}
 
 /* ---------- logo band + footer ---------- */
 .logo-band{

@@ -15,9 +15,7 @@
 
   /* Subject line per form id. A form not listed here is left alone. */
   var SUBJECTS = {
-    'join-form': 'Add me to the newsletter',
-    'seat-form': 'Save me a seat — needlepoint class',
-    'host-form': "I'd love to host a craft night"
+    'seat-form': 'Save me a seat — needlepoint class'
   };
 
   /* ---- Footer contact link ---- */
