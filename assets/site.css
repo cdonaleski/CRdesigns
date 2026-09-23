@@ -347,7 +347,7 @@ input::placeholder{color:#B49E97}
   .hero-stack .slot.inset{left:14px;bottom:14px;width:34%;max-width:140px}
 }
 
-/* --- the $55 / 2 hours / Level 1 bar under the headline --- */
+/* --- the $55 / 90 min / Level 1 bar under the headline --- */
 .statbar{
   display:flex;flex-wrap:wrap;align-items:stretch;gap:clamp(18px,3vw,28px);
   padding-block:22px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
