@@ -332,7 +332,7 @@ Avoid: *hands, fingers, people, text, watermarks, cool tones, cluttered backgrou
 4. Re-run the build:
 
    ```bash
-   cd "/Users/osq_studio/Documents/CUSTOM APPS/CR Design Co" && python3 build.py
+   python3 build.py
    ```
 
 ### Compressing before you add it

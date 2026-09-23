@@ -14,7 +14,7 @@ Three placeholders are highlighted in brass on the pages so they're impossible t
 Grep both pages for the bracketed text:
 
 ```bash
-cd "/Users/osq_studio/Documents/CUSTOM APPS/CR Design Co" && grep -n "\[" index.html needlepoint.html assets/forms.js
+grep -n "\[" index.html needlepoint.html assets/forms.js
 ```
 
 
@@ -62,11 +62,13 @@ than adding inline styles to a page.
 
 ## Working on it
 
+Run every command below from the project folder.
+
 **Preview locally.** Don't just double-click `index.html` — the fonts and layout
 behave better over a real server:
 
 ```bash
-cd "/Users/osq_studio/Documents/CUSTOM APPS/CR Design Co" && python3 -m http.server 8421
+python3 -m http.server 8421
 ```
 
 Then open http://localhost:8421. Ctrl-C to stop. (Port 8421 rather than the usual 8000
@@ -81,7 +83,7 @@ Cmd-Shift-R.
 Photos 01, 02 and 03 each appear more than once.
 
 ```bash
-cd "/Users/osq_studio/Documents/CUSTOM APPS/CR Design Co" && python3 build.py
+python3 build.py
 ```
 
 **Publishing.** `python3 build.py` writes both targets:

@@ -175,7 +175,7 @@ a prerequisite.
 ## After any change to the site
 
 ```bash
-cd "/Users/osq_studio/Documents/CUSTOM APPS/CR Design Co" && python3 build.py
+python3 build.py
 ```
 
 Then re-paste the affected block. There's no partial update — the block is one unit, so
