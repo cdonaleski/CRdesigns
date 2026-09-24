@@ -10,7 +10,7 @@
   'use strict';
 
   /* The only thing you need to edit. */
-  var CONTACT = '[CONTACT EMAIL]';
+  var CONTACT = 'hello@crdesignco.com';
 
   var mail = document.getElementById('foot-mail');
   if (mail) {

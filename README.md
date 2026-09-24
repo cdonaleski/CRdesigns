@@ -10,24 +10,11 @@ Live preview: https://claude.ai/artifact/DArQPYRkuTek7WycLTGfzi
 
 ## Still to fill in
 
-One placeholder is highlighted in brass on the pages so they're impossible to miss.
-Grep both pages for the bracketed text:
+Nothing — every placeholder is filled and the site is live at
+**https://crdesignco.com**.
 
-```bash
-grep -n "\[" index.html needlepoint.html assets/forms.js
-```
-
-
-| Placeholder | Where | What it needs |
-|---|---|---|
-| `[CONTACT EMAIL]` | Both footers, all four forms | Your business email. Set it **once** — the `CONTACT` variable at the top of `assets/forms.js`. |
-| Shop link | Header + footer nav, both pages | Currently a non-clickable `<span class="nav-soon">Shop<span class="chip">Soon</span></span>`. When the shop is live, replace that span with `<a href="YOUR-URL">Shop</a>` in both pages. |
-
-
-Remove the `class="fill"` wrapper from each once it's real, so the brass highlight goes away.
-
-Six photographs are still placeholders too — specs, AI prompts and shooting notes are in
-[`docs/IMAGE-BRIEF.md`](docs/IMAGE-BRIEF.md).
+Contact address is set once in `assets/forms.js` (`CONTACT`) and hardcoded into both
+footers so the link still works with JavaScript off.
 
 ---
 
