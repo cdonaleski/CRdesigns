@@ -297,6 +297,7 @@ input::placeholder{color:#B49E97}
    than the newsletter. Must come after the rule above: same specificity,
    so source order is what decides. */
 .ghl-embed--host iframe{min-height:690px}
+.ghl-embed--seat iframe{min-height:545px}
 
 /* ---------- logo band + footer ---------- */
 .logo-band{
