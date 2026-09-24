@@ -10,7 +10,7 @@ Live preview: https://claude.ai/artifact/DArQPYRkuTek7WycLTGfzi
 
 ## Still to fill in
 
-Three placeholders are highlighted in brass on the pages so they're impossible to miss.
+One placeholder is highlighted in brass on the pages so they're impossible to miss.
 Grep both pages for the bracketed text:
 
 ```bash
@@ -22,8 +22,7 @@ grep -n "\[" index.html needlepoint.html assets/forms.js
 |---|---|---|
 | `[CONTACT EMAIL]` | Both footers, all four forms | Your business email. Set it **once** — the `CONTACT` variable at the top of `assets/forms.js`. |
 | Shop link | Header + footer nav, both pages | Currently a non-clickable `<span class="nav-soon">Shop<span class="chip">Soon</span></span>`. When the shop is live, replace that span with `<a href="YOUR-URL">Shop</a>` in both pages. |
-| `[WHAT'S INCLUDED]` | Needlepoint, class spec | Canvas, threads, needle — whatever a guest goes home with |
-| `[DATE]` · `[LOCATION]` | Needlepoint, class spec | When and where the next class runs |
+
 
 Remove the `class="fill"` wrapper from each once it's real, so the brass highlight goes away.
 
